@@ -1,7 +1,12 @@
-This page will act like index.md
+Here is a simple footnote[^1].
 
-Only difference is that the homepage will still be based on the index file's contents.
+A footnote can also have multiple lines[^2].  
 
-We can see the text on this file by the following urls:
+You can also use words, to fit your writing style more closely[^note].
 
-https://f3shaik.github.io/cse15l-lab-reports/newPage.md
+[^1]: My reference.
+[^2]: Every new line should be prefixed with 2 spaces.  
+  This allows you to have a footnote with multiple lines.
+[^note]:
+    Named footnotes will still render with numbers instead of the text but allow easier identification and linking.  
+    This footnote also has been made with a different syntax using 4 spaces for new lines.
