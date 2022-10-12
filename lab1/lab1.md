@@ -54,13 +54,13 @@ You can exit out of the server by using the command `exit`.
 
 Obviously, you first got to create a file for you to use so for our purposes create a file called *WhereAmI.java* and test it out by the way to make sure it works. 
 
-Now afetr checking it works, use scp to connect both sides.
+Now after checking it works, use scp to connect both sides.
 
 `scp WhereAmI.java fshaik@ieng6.ucsd.edu:~/`
 
 So now if you go log in to the server, you got a lovely-looking file called *WhereAmI.java* waiting for you.
 
-![Image](cp.png)
+![Image](remote.png)
 
 ## Setting an SSH Key
 Now logging in is a pain, so one can use a SSH key for log in.
@@ -69,7 +69,11 @@ Just remember that with easiness comes less security so gaurd that ssh key caref
 
 Run `ssh-keygen` to generate a new keygen file used to substitute loggin into the server. You'll want to copy this file to your server which is done by logging in first, creating a .ssh file & securely copying your keygen file into there. 
 
-![Image](fast.png)
+![Image](ssh-keygen.png)
+
+![Image](remote_copy.png)
+
+![Image](login.png)
 
 ## Optimizing Remote Running
 Now is the fun part. You got everything set up! How so?
