@@ -69,7 +69,7 @@ Just remember that with easiness comes less security so gaurd that ssh key caref
 
 Run `ssh-keygen` to generate a new keygen file used to substitute loggin into the server. You'll want to copy this file to your server which is done by logging in first, creating a .ssh file & securely copying your keygen file into there. 
 
-![Image](ssh-keygen.png)
+![Image](keygen.png)
 
 ![Image](remote_copy.png)
 
