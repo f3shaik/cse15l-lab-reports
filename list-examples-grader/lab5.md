@@ -1,13 +1,7 @@
-# __Week 9 Lab Report__
+# __Week 3 Lab Report__
 *Due on Monday, November 28*
 
 ## Here's my grade.sh code
-
-This is a sample of how an autograder may work by taking in a student github repository and conducting certain tests to generate a student's score.
-This script clones a given repository based on the argument and runs the seperate tests as indicated. Note that there are seperate messages produced 
-for each error that may arise (i.e. missing file or tests failed). This script works on both the terminal and web based format. Below the autograder
-script are some potential screenshots on how the script works for difference student repositories.
-
 ```
 # Create your grading script here
 CPATH=".:../lib/hamcrest-core-1.3.jar:../lib/junit-4.13.2.jar"
@@ -66,14 +60,13 @@ exit 0
 ```
 
 ## And here's some screenshots
-
-# Some sample "student" submissions and their results (anonymity is provided)
-
 ![Image1](good.png)
 
 ![Image2](bad.png)
 
 ![Image3](miss.png)
+
+
 
 ## Time to understand the deeper level of this code
 
@@ -142,24 +135,24 @@ The subsequent if block also doesn't go through since the error code is 0. This 
 This block is relatively straightforward where we display a success message if we got this far and now runs the code. For this successfull submission, the output and error is none and the return code is 0.
 
 *   ```
-# 5) Run the tests and report the grade based on the JUnit output
-    PASSED=$(((6-`grep -w E output.txt | grep -o 'E' | grep -c .`)))
-    echo "_-_ RESULTS _-_"
-    echo "Tests passed: $PASSED out of 6"
-    if [[ $PASSED -ge 3 ]]
-    then
-        echo "Passed, nice job!"
-    else
-        echo "Failed, try even improving your code!"
-    fi
-    if [[ $PASSED -eq 6 ]]
-    then
-        echo "No errors, even nicer job!!"
-    else
-        echo "Here's a copy of your errors."
-        cat output.txt
-    fi
-    exit 0
+	# 5) Run the tests and report the grade based on the JUnit output
+	    PASSED=$(((6-`grep -w E output.txt | grep -o 'E' | grep -c .`)))
+	    echo "_-_ RESULTS _-_"
+	    echo "Tests passed: $PASSED out of 6"
+	    if [[ $PASSED -ge 3 ]]
+	    then
+		echo "Passed, nice job!"
+	    else
+		echo "Failed, try even improving your code!"
+	    fi
+	    if [[ $PASSED -eq 6 ]]
+	    then
+		echo "No errors, even nicer job!!"
+	    else
+		echo "Here's a copy of your errors."
+		cat output.txt
+	    fi
+	    exit 0
     ```
 
 Getting this far, this block is used to calculate the scores of what happened from the run, how many tests were passed and what's the final score for the student. The PASSED variable is used to store the number of tests that passed. This in itself if a result of three commands working together. From before the output of the java command is outputted to the output.txt file. My approach to count the number of failures is by counting the number of E's that appear in a sample output. So the first grep command generates the line where the E's appear. For our case, the output is nothing since there are no E's and no error since the command executed. But the return code will be 1 since this is a successful submission and no tests have failed. From there, we do another grep statement that takes that line of E's we would have and rearranges them to seperate lines for use in the next command. Again, since there are no failures the output and error is 0 but the return code is 1. Now is where grep works again by counting the number of lines there are (in this case no errors so 0 lines). Everything aforementioned is same. All this result is then subtracted by 6 which is stored in variable PASSED. Note that because the other three statements have been producing a return code of 1, the assignment also provides a return code of 1. From there two echo statements happen both of which result in a output and error of nothing and a return code of 0. 
