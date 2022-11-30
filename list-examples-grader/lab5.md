@@ -60,11 +60,11 @@ exit 0
 ```
 
 ## And here's some screenshots
-![Image1](good.png)
+![Image1](pics/good.png)
 
-![Image2](bad.png)
+![Image2](pics/bad.png)
 
-![Image3](miss.png)
+![Image3](pics/miss.png)
 
 
 
